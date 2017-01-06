@@ -1,0 +1,72 @@
+#container{
+    width: 100%;
+    padding-top: 62%;
+    background-image: url("img/大/iphone_alt_large.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#product li{
+    float: left;
+    width: 25%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #ffffff;
+}
+#product li:nth-child(1){
+    background-image: url("img/大/made_by_apple_xlarge.jpg");
+}
+#product li:nth-child(2){
+    background-image: url("img/大/ipad_pro_xlarge.jpg");
+}
+#product li:nth-child(3){
+    background-image: url("img/大/airpods_xlarge.jpg");
+}
+#product li:nth-child(4){
+    background-image: url("img/大/apple_tv_xlarge.jpg");
+}
+@media screen and (min-width: 1068px) {
+    #container{
+        background-image: url("img/大/iphone_alt_large.jpg");
+    }
+}
+@media screen and (max-width: 1067px){
+    #container{
+        background-image: url("img/中/iphone_alt_medium.jpg");
+    }
+    #product li{
+        width: 50%;
+    }
+    #product li:nth-child(1){
+        background-image: url("img/中/made_by_apple_medium.jpg");
+    }
+    #product li:nth-child(2){
+        background-image: url("img/中/ipad_pro_medium.jpg");
+    }
+    #product li:nth-child(3){
+        background-image: url("img/中/airpods_medium.jpg");
+    }
+    #product li:nth-child(4){
+        background-image: url("img/中/apple_tv_medium.jpg");
+    }
+}
+@media screen and (max-width: 767px){
+    #container{
+        background-image: url("img/小/iphone_alt_small.jpg");
+    }
+    #product li{
+        width: 100%;
+    }
+    #product li:nth-child(1){
+        background-image: url("img/小/made_by_apple_small.jpg");
+    }
+    #product li:nth-child(2){
+        background-image: url("img/小/ipad_pro_small.jpg");
+    }
+    #product li:nth-child(3){
+        background-image: url("img/小/airpods_small.jpg");
+    }
+    #product li:nth-child(4){
+        background-image: url("img/小/apple_tv_small.jpg");
+    }
+}
