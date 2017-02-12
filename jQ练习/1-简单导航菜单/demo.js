@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$(".main>a").on('click',function () {
-        $(this).next('ul').slideToggle(function(){//toggle函数的一般会有两个参数，分别代表一种状态，两个参数就是两个状态，他们之间会互相切换
+        $(this).next('ul').toggle(function(){//toggle函数的一般会有两个参数，分别代表一种状态，两个参数就是两个状态，他们之间会互相切换
             // $(this).next("ul").slideDown("slow");
             console.log('a');
             $(this).css("background-image","url('images/up.gif')");

@@ -1,0 +1,129 @@
+#item{
+    float: left;
+    width: 312px;
+    height: 560px;
+    position: relative;
+}
+#item .item-img{
+    width: 100%;
+    float: left;
+    border: 1px solid #BBBBBB;
+}
+#item .item-img .small-img{
+    float: left;
+}
+#item .small-img img{
+    width: 100%;
+    display: block;
+}
+#item .item-img .pointer{
+    background: #BBBBBB;
+    position: absolute;
+    width: 131px;
+    height: 131px;
+    opacity: 0.4;
+    display: none;
+    cursor: crosshair;
+}
+#item .big-item-img{
+    display: none;
+    width: 340px;
+    height: 340px;
+    overflow: hidden;
+    position: absolute;
+    left: 320px;
+    border: 1px solid #BBBBBB;
+}
+#item .big-img-title{
+    width: 100%;
+    background: #BBBBBB;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 100;
+    top:0;
+    text-align: center;
+}
+#item .big-img{
+    position: absolute;
+}
+#item .full-item-img{
+    clear: both;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 320px;
+    cursor: pointer;
+}
+.body-mask{
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 1000;
+    background: #000000;
+    opacity: 0.5;
+    display: none;
+}
+#item .full-img{
+    z-index: 100000;
+    display: none;
+    background: #ffffff;
+    padding: 10px;
+    position: fixed;
+    left: 50%;
+    top:50%;
+    border: 1px solid;
+}
+#item .img-list{
+    width: 100%;
+}
+#item .img-list li{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #eeeeee;
+}
+#item .img-list li:hover{
+    border: 1px solid #444444;
+}
+#item .img-list li img{
+    display: block;
+    width: 100%;
+}
+#item .tab{
+    margin-top: 20px;
+    clear: both;
+    width: 310px;
+    float: left;
+}
+#item .tab-nav li{
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    padding: 1px 6px;
+    margin-right: 4px;
+    background: #F1F1F1;
+    border: 1px solid #898989;
+    border-bottom: none
+}
+#item .tab-nav li.selected{
+    background: #6D84B4;
+    color: #ffffff;
+}
+#item .tab-content{
+    clear: both;
+    border: 1px solid #666666;
+    top:20px;
+    width: 100%;
+}
+#item .tab-content li{
+    display: none;
+    /*position: absolute;*/
+}
+#item .tab-content li.selected{
+    display: block;
+}

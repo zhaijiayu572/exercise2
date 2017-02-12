@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Jane Shopping</title>
     <link rel="stylesheet" href="style-mine/main.css">
+    <link rel="stylesheet" href="style-mine/skin/skin_0.css" class="skin">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery.cookie.js"></script>
+    <script src="js-min/change_skin.js"></script>
+    <!--清楚文本框里面的值-->
+    <script src="js-min/clear_val.js"></script>
+    <!--淡入淡出的轮播图-->
+    <script src="js-min/img-fade.js"></script>
+    <!--滑动的轮播图-->
+    <script src="js-min/img-slide.js"></script>
 </head>
 <body>
 <header>
@@ -15,12 +25,12 @@
             <input type="text" value="请输入商品名称">
         </div>
         <ul id="skin">
+            <li id="skin_0"></li>
             <li id="skin_1"></li>
             <li id="skin_2"></li>
             <li id="skin_3"></li>
             <li id="skin_4"></li>
-            <li id="skin_5"></li>
-            <li id="skin_6" class="selected"></li>
+            <li id="skin_5" class="selected"></li>
         </ul>
         <div id="head-nav">
             <ul class="nav-list">
@@ -127,7 +137,45 @@
             </div>
         </div>
         <div id="imgScroll">
-
+            <div class="img-content">
+                <a href="#"><img src="images/ads/1.jpg" alt="" style="z-index: 1"></a>
+                <a href="#"><img src="images/ads/2.jpg" alt=""></a>
+                <a href="#"><img src="images/ads/3.jpg" alt=""></a>
+                <a href="#"><img src="images/ads/4.jpg" alt=""></a>
+                <a href="#"><img src="images/ads/5.jpg" alt=""></a>
+            </div>
+            <ul class="img-nav">
+                <li class="selected">
+                    <a href="#">
+                        <p>相约情人节</p>
+                        <p>全场119元起</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>新款上线</p>
+                        <p>全场357元起</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>愤怒小鸟特卖</p>
+                        <p>全场98元</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>男鞋促销第一</p>
+                        <p>全场3.1折起</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>春季新品发布</p>
+                        <p>全场4.1折起</p>
+                    </a>
+                </li>
+            </ul>
         </div>
         <div id="news">
             <div class="main-news">
@@ -146,7 +194,101 @@
                 </ul>
             </div>
         </div>
-        <div id="brand"></div>
+        <div id="brand">
+            <div class="brand-top">
+                <span class="brand-title">品牌活动</span>
+                <ul class="brand-nav">
+                    <li class="selected"><a href="#">运动</a></li>
+                    <li><a href="#">女鞋</a></li>
+                    <li><a href="#">男鞋</a></li>
+                    <li><a href="#">童鞋</a></li>
+                </ul>
+            </div>
+            <div class="brand-content">
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/upload/20120220.png" alt=""></a>
+                        <a class="img-title" href="#">耐克</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120217.jpg" alt=""></a>
+                        <a class="img-title" href="#">阿迪达斯</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120218.jpg" alt=""></a>
+                        <a class="img-title" href="#">李宁</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120219.png" alt=""></a>
+                        <a class="img-title" href="#">安踏</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120220.png" alt=""></a>
+                        <a class="img-title" href="#">耐克</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120217.jpg" alt=""></a>
+                        <a class="img-title" href="#">阿迪达斯</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120218.jpg" alt=""></a>
+                        <a class="img-title" href="#">李宁</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120219.png" alt=""></a>
+                        <a class="img-title" href="#">安踏</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120220.png" alt=""></a>
+                        <a class="img-title" href="#">耐克</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120217.jpg" alt=""></a>
+                        <a class="img-title" href="#">阿迪达斯</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120218.jpg" alt=""></a>
+                        <a class="img-title" href="#">李宁</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120219.png" alt=""></a>
+                        <a class="img-title" href="#">安踏</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120220.png" alt=""></a>
+                        <a class="img-title" href="#">耐克</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120217.jpg" alt=""></a>
+                        <a class="img-title" href="#">阿迪达斯</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120218.jpg" alt=""></a>
+                        <a class="img-title" href="#">李宁</a>
+                        <div class="img-mask"></div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/20120219.png" alt=""></a>
+                        <a class="img-title" href="#">安踏</a>
+                        <div class="img-mask"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <footer>
         Copyright © 2009 - 2012 JaneShop Inc.
