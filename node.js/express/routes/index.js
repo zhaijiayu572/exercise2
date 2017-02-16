@@ -1,14 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+var user = require('../controllers/user.js');
+var blog = require('../controllers/blog');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-router.get('/login',function (req,res,next) {
-    res.render('login');
-});
-router.post('/login',function (req,res,next) {
-    res.send(req.body.username)
-});
+router.get('/', user.index);
+router.get('/index',user.index);
+router.get('/login',user.login);
+router.post('/do_login',user.do_login);
+router.get('/exit',user.exit);
+router.get('/show_details',blog.show_detail);
 module.exports = router;
