@@ -28,5 +28,7 @@ exports.do_login = function (req,res,next) {
     })
 };
 exports.exit = function (req,res,next) {
-
+    req.session.user = '';
+    console.log(req.path);
+    // res.redirect(req.path);
 };
