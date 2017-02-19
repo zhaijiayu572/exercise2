@@ -9,3 +9,13 @@ exports.update_blog = function(bid,callback){
     var arr = [bid];
     db.query(sql,arr,callback);
 };
+exports.get_catalog = function (callback) {
+    var sql = "select * from t_blog_catalogs";
+    var arr = [];
+    db.query(sql,arr,callback);
+};
+exports.add_blog = function (uid,title,content,catalog,callback) {
+    var sql = "insert into t_blogs(CATALOG_ID,WRITER,TITLE,CONTENT) values(?,?,?,?)";
+    var arr = [catalog,uid,title,content];
+    db.query(sql,arr,callback);
+}
