@@ -1,0 +1,32 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.demo-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.demo-container .demo-mask{
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.demo-container .layer-content{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background: #7ACEF4;
+    left: 50%;
+    margin-left: -250px;
+    top:50%;
+    margin-top: -200px;
+}
+.layer-content .title
