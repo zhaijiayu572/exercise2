@@ -4,4 +4,5 @@ require(['jquery','carousel'],function ($,Carousel) {
         btnStyle:'bottom'
     };
     var carousel = new Carousel(config);
+    var carousel2 = new Carousel();
 });

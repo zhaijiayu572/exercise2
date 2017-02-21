@@ -8,7 +8,7 @@ define(function () {
         var settings = {
             height:400,
             width:800,
-            imgSrc:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'],
+            imgSrc:['img/1.jpg','img/5.jpg','img/3.jpg','img/4.jpg'],
             container:$('body'),
             panelStyle:'square',   //有square和circle两种样式
             btnStyle:'center'      //有center和bottom两种样式
@@ -19,6 +19,7 @@ define(function () {
         for(var i=0;i<settings.imgSrc.length;i++){
             if(i==0){
                 $('<img src="'+settings.imgSrc[i]+'" class="selected">').appendTo(this.imgContent);
+                continue;
             }
             $('<img src="'+settings.imgSrc[i]+'">').appendTo(this.imgContent);
         }
@@ -60,7 +61,7 @@ define(function () {
         this.Ccontainer.on({'mouseover':function () {
             clearInterval(timer)
             },
-            'mouserout':function () {
+            'mouseout':function () {
                 timer= setInterval(function () {
                     that.next.trigger('click');
                 },1000);
