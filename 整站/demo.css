@@ -1,0 +1,313 @@
+#banner{
+    background: #31333e;
+    width: 100%;
+    height: 460px;
+}
+#banner .wrapper{
+    width: 1003px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#banner .wrapper .left-btn{
+    height: 50px;
+    width: 30px;
+    background: url("./img/left-btn.png");
+    position: absolute;
+    left: 0;
+    top:50%;
+    margin-top: -15px;
+}
+#banner .wrapper .right-btn{
+    height: 50px;
+    width: 30px;
+    background: url("./img/right-btn.png");
+    position: absolute;
+    right: 0;
+    top:50%;
+    margin-top: -15px;
+}
+#banner .wrapper .banner-title{
+    position: absolute;
+    font-size: 25px;
+    color: #FFFFFF;
+    width: 511px;
+    left: 147px;
+    top:47px;
+}
+#banner .wrapper .banner-img-container{
+    width: 573px;
+    height: 319px;
+    position: absolute;
+    bottom: 28px;
+    left: 230px;
+}
+#banner .wrapper .more{
+    width: 180px;
+    height: 48px;
+    background: #00aeff;
+    position: absolute;
+    top:39px;
+    right: 122px;
+    border-radius: 2px;
+}
+#banner .wrapper .more a{
+    display: block;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+#news{
+    width: 100%;
+    height: 492px;
+}
+#news .wrapper{
+    width: 1003px;
+    margin: 0 auto;
+    height: 100%;
+}
+#news .news-list{
+    background: #FFFFFF;
+    width: 334px;
+    height: 100%;
+    float: left;
+}
+#news .news-list h3{
+    margin-top: 87px;
+    font-size: 21px;
+    color: #626262;
+    width: 100%;
+    text-align: center;
+}
+#news .news-list .news-img{
+    height: 100px;
+    width: 100px;
+    margin: 29px auto 0;
+
+}
+#news .news-list .news-content{
+    margin-top: 18px;
+}
+#news .news-list .news-content p{
+    width: 288px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+}
+#news .news-list .news-content h4{
+    width: 200px;
+    text-align: center;
+    margin: 24px auto 0;
+
+}
+#news .news-list .news-content h4 a{
+    font-size: 15px;
+    color: #83ceff;
+}
+#works{
+    width: 100%;
+    height: 500px;
+    background: #e2e7ed;
+    overflow: hidden;
+}
+#works .wrapper{
+    width: 1003px;
+    height: 500px;
+    margin: 0 auto;
+}
+#works .wrapper h3{
+
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    color: #626262;
+    margin-top: 30px;
+}
+#works .wrapper .img-list{
+    margin-top: 10px;
+    width: 100%;
+    height: 800px;
+}
+#works .wrapper .img-list li{
+    float: left;
+    width: 250px;
+    height: 200px;
+    background: url("./img/works.jpg") no-repeat;
+}
+#works .wrapper .img-list li:nth-child(1){
+    background-position: 0 0;
+}
+#works .wrapper .img-list li:nth-child(2){
+    background-position: -250px 0;
+}
+#works .wrapper .img-list li:nth-child(3){
+    background-position: -500px 0;
+}
+#works .wrapper .img-list li:nth-child(4){
+    background-position: -750px 0;
+}
+#works .wrapper .img-list li:nth-child(5){
+    background-position: 0 -200px;
+}
+#works .wrapper .img-list li:nth-child(6){
+    background-position: -250px -200px;
+}
+#works .wrapper .img-list li:nth-child(7){
+    background-position: -500px -200px;
+}
+#works .wrapper .img-list li:nth-child(8){
+    background-position: -750px -200px;
+}
+#client{
+    width: 100%;
+    height: 153px;
+}
+#client .wrapper{
+    width: 1003px;
+    height: 100%;
+    margin: 0 auto;
+}
+#client .wrapper h3{
+    font-size: 30px;
+    color: #626262;
+    margin-top: 30px;
+}
+#client .wrapper .client-content{
+    margin-top: 13px;
+    width: 100%;
+    height: 82px;
+    position: relative;
+}
+
+#client .client-content .left-btn{
+    height: 40px;
+    width: 23px;
+    position: absolute;
+    top:50%;
+    left: 0;
+    margin-top: -20px;
+    background: url("./img/client-left-btn.png") no-repeat center;
+}
+#client .client-content .right-btn{
+    height: 40px;
+    width: 23px;
+    position: absolute;
+    top:50%;
+    right: 0;
+    margin-top: -20px;
+    background: url("./img/client-right-btn.png") no-repeat center;
+}
+#client .client-content .client-list{
+    width: 835px;
+    margin: 0 auto;
+    height: 100%;
+    /*background: #7ACEF4;*/
+    line-height: 82px;
+    position: relative;
+}
+.client-list li{
+    position: absolute;
+    top:50%;
+}
+.client-list li:nth-child(1){
+    left: 0;
+    margin-top: -27px;
+    height: 54px;
+    width: 113px;
+    background: url("./img/client1.png") center;
+}
+.client-list li:nth-child(2){
+    left: 169px;
+    margin-top: -16px;
+    height: 32px;
+    width: 197px;
+    background: url("./img/client2.png") center;
+}
+.client-list li:nth-child(3){
+    left:422px;
+    margin-top: -15px;
+    height: 31px;
+    width: 166px;
+    background: url("./img/client3.png") center;
+}
+.client-list li:nth-child(4){
+    left: 644px;
+    margin-top: -25px;
+    height: 50px;
+    width: 180px;
+    background: url("./img/client4.png") center;
+}
+#footer{
+    width: 100%;
+    background: #31333e;
+    height: 176px;
+}
+#footer .wrapper{
+    position: relative;
+    width: 1003px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#footer .nav-list{
+    margin-top: 45px;
+}
+#footer .nav-list li{
+    float: left;
+    padding: 0 30px;
+    font-size: 15px;
+    color: #c0c5cb;
+    border-right: 1px solid #c0c5cb;
+}
+#footer .nav-list li:first-child{
+    padding-left:0;
+}
+#footer .nav-list li:last-child{
+    border-right: none;
+}
+#footer .company{
+    float: left;
+    margin-top: 13px;
+    clear: left;
+    color: #c0c5cb;
+}
+#footer .tip{
+    margin-top: 40px;
+    float: left;
+    clear: left;
+    color: #c0c5cb;
+}
+#footer .logo-list{
+    position: absolute;
+    top: 44px;
+    right: 0;
+}
+#footer .logo-list li{
+    width: 37px;
+    height: 37px;
+    float: left;
+    margin-right: 12px;
+    background: url("./img/footer-log.png") no-repeat;
+}
+#footer .logo-list li:nth-child(1){
+    background-position: 0 0;
+}
+#footer .logo-list li:nth-child(2){
+    background-position: -48px 0;
+}
+#footer .logo-list li:nth-child(3){
+    background-position: -96px 0;
+}
+#footer .logo-list li:nth-child(4){
+    background-position: -144px 0;
+}
+#footer .logo-list li:nth-child(5){
+    background-position: -192px 0;
+}
+#footer .logo-list li:nth-child(6){
+    background-position: -239px 0;
+}
