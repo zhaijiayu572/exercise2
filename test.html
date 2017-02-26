@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>testCSS3</title>
+    <script src="modernizr-custom.js"></script>
+</head>
+<script src="jQ练习/jquery-3.1.1.min.js"></script>
+<script>
+    $(function () {
+        if($('html').hasClass('csstransforms3d')){
+            $('.content').on('click',function () {
+                $('.content').addClass('hover');
+            })
+        }else{
+            $('.content').on('mouseover',function () {
+                $(this).find('p').show();
+            })
+        }
+
+    })
+</script>
+<style>
+    .container{
+
+        perspective: 880px;
+    }
+    .content{
+        height: 300px;
+        width: 300px;
+        position: relative;
+    }
+    .csstransforms3d .content{
+        -webkit-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition:all 1s ease;
+        transition: all 1s ease;
+
+        /*opacity: 0.5;*/
+    }
+    .no-csstransforms3d .content{
+        overflow: hidden;
+        /*width: 100px;*/
+        /*height: 100px;*/
+        /*background: #000000;*/
+    }
+    .csstransforms3d .content img{
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top:0;
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .no-csstransforms3d .content img{
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top:0;
+        display: block;
+        /*backface-visibility: hidden;*/
+        /*-webkit-backface-visibility: hidden;*/
+
+    }
+    .csstransforms3d .content.hover{
+        transform: rotateY(180deg);
+    }
+    .content p{
+        margin: 0;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+    .csstransforms3d .content p{
+        background: #FFFFFF;
+        /*-ms-transform: rotateY(180deg);*/
+        /*-o-transform: rotateY(180deg);*/
+        /*-webkit-transform: rotateY(180deg);*/
+        /*-moz-transform: rotateY(180deg);*/
+        /*transform: rotateY(180deg);*/
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .no-csstransforms3d .content p{
+        z-index: 1;
+        display: none;
+        background: #000000;
+        opacity: 0.5;
+        color: #FFFFFF;
+        /*top:300px;*/
+
+    }
+</style>
+<body>
+<div class="container">
+    <div class="content">
+        <p>都弄上年底偶时间的确就我弟家</p>
+        <img src="1.jpg" alt='暂无图片'>
+    </div>
+</div>
+
+</body>
+</html>
