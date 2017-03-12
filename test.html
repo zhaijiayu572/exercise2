@@ -8,13 +8,20 @@
 <script src="jQ练习/jquery-3.1.1.min.js"></script>
 <script>
     $(function () {
-        if($('html').hasClass('csstransforms3d')){
-            $('.content').on('click',function () {
-                $('.content').addClass('hover');
-            })
-        }else{
+//        if($('html').hasClass('csstransforms3d')){
+//            $('.content').on('click',function () {
+//                $('.content').addClass('hover');
+//            })
+//        }else{
             $('.content').on('mouseover',function () {
-                $(this).find('p').show();
+                $(this).find('p').animate({
+                    top:0
+                },1000);
+            });
+            $('.content').on('mouseout',function () {
+                $(this).find('p').finish().animate({
+                    top:'100%'
+                },1000);
             })
         }
 
@@ -103,8 +110,9 @@
         backface-visibility: hidden;
     }
     .no-csstransforms3d .content p{
+        top:80%;
         z-index: 1;
-        display: none;
+        /*display: none;*/
         background: #000000;
         opacity: 0.5;
         color: #FFFFFF;
