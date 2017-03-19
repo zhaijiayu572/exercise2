@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <button @click="add">ADD</button>
+    <ul>
+        <li v-for="(val,index) in msgList">
+            {{ val }}
+            <button @click="del(index)">del</button>
+        </li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msgList:[],
+            msg:""
+        },
+        methods:{
+            add:function () {
+                this.msgList.push(this.msg);
+                this.msg = '';
+            },
+            del:function(idx){
+                this.msgList.splice(idx,1);
+            }
+        }
+    });
+</script>
+</body>
+</html>

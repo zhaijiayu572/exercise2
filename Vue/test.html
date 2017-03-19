@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Test</title>
+    <style>
+        .aaa{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="fname">
+    <input type="text" v-model="lname">
+    <!--<div class="span" @click="fn">点击我试试</div>-->
+    <div class="show" :class="{aaa:aaa}">aaaaa</div>
+    <button @click="fn2">Change</button>
+    {{ fullName }}
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            aaa:'bbb',
+            fname:'hello',
+            lname:'world',
+            isRed:true
+        },
+        methods:{
+            fn:function () {
+                alert(this.fname+this.lname);
+            },
+            fn2:function () {
+                this.isRed = !this.isRed;
+            }
+        },
+        computed:{
+            fullName:{
+                get:function () {
+                    return this.fname+this.lname;
+                }
+            }
+        }
+    });
+
+</script>
+</html>
