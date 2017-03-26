@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="react-15.3.1/build/react.js"></script>
+<script src="react-15.3.1/build/react-dom.js"></script>
+<script src="react-15.3.1/browser.js"></script>
+<script type="text/babel">
+
+    var Test = React.createClass({
+        render:function () {
+            return (
+                <div>hello world</div>
+            )
+        }
+    });
+    var Another = React.createClass({
+        render:function () {
+            return (
+                <div>
+                    <p>hello</p>
+                    <p>world</p>
+                </div>
+            )
+        }
+    });
+    ReactDOM.render(
+        <div>
+            <Test/>
+            <Another/>
+        </div>
+        ,
+        document.getElementById('container')
+    )
+</script>
+</body>
+</html>

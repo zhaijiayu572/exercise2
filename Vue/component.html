@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component</title>
+</head>
+<body>
+<div id="app">
+    <my-app></my-app>
+</div>
+<script type="text/x-template" id="my-template">
+    <div>
+        <slod></slod>
+        <p>Hello World</p>
+        <h3>I am happy</h3>
+    </div>
+</script>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        components:{
+            'my-app':{
+                template:'#my-template'
+            }
+        }
+    })
+</script>
+</body>
+</html>
