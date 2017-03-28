@@ -16,8 +16,10 @@
             overflow: hidden;
             background: #cccccc;
             position: relative;
+            perspective: 800px;
         }
         #stage .img-container{
+            transform-style: preserve-3d;
             transition: all 0.5s ease;
             padding-top: 40px;
             width: 320px;
@@ -58,7 +60,7 @@
 </script>
 <script type="text/x-template" id="my-wall">
     <div id="stage">
-        <div class="img-container" v-for="(val,index) in imgSrcArr" :style="posArr[index]" @click="setCenter(index)">
+        <div class="img-container" v-for="(val,index) in imgSrcArr" :style="posArr[index].style" @click="setCenter(index)">
             <my-img :data="val"></my-img>
         </div>
     </div>
@@ -68,7 +70,7 @@
 <script>
     Vue.component("my-img",{
         template:"#my-img",
-        props:['data','pos'],
+        props:['data'],
     });
     Vue.component('photo-wall',{
         template:"#my-wall",
@@ -87,28 +89,41 @@
             this.pageInfo.yMax = stageHeight-imgHeight/2;
             this.pageInfo.centerPos.left = (stageWidth/2-imgWidth/2)+'px';
             this.pageInfo.centerPos.top = (stageHeight/2-imgHeight/2)+'px';
-
+            for(var i=0;i<this.imgSrcArr.length;i++){
+                this.transform.push('rotateY(0deg)');
+            }
         },
         computed:{
             posArr:function () {
                 var arr = [];
+                var attr = {};
                 for(var i=0;i<this.imgSrcArr.length;i++){
                     if(i<this.imgSrcArr.length/2){
-                        var pos = {
-                            left:this.getRand(this.pageInfo.xLeftMin,this.pageInfo.xLeftMax)+'px',
-                            top:this.getRand(this.pageInfo.yMin,this.pageInfo.yMax)+'px'
+                        attr = {
+                            style:{
+                                left:this.getRand(this.pageInfo.xLeftMin,this.pageInfo.xLeftMax)+'px',
+                                top:this.getRand(this.pageInfo.yMin,this.pageInfo.yMax)+'px',
+                                transform:this.transform[i]
+                            },
+                            isBack:false
+
                         } ;
-                        arr.push(pos);
+                        console.log(this.transform[i]);
+                        arr.push(attr);
                     }else{
-                        var pos = {
-                            left:this.getRand(this.pageInfo.xRightMin,this.pageInfo.xRightMax)+'px',
-                            top:this.getRand(this.pageInfo.yMin,this.pageInfo.yMax)+'px'
+                        attr = {
+                            style:{
+                                left:this.getRand(this.pageInfo.xRightMin,this.pageInfo.xRightMax)+'px',
+                                top:this.getRand(this.pageInfo.yMin,this.pageInfo.yMax)+'px',
+                                transform:this.transform[i]
+                            }
+
                         } ;
-                        arr.push(pos);
+                        arr.push(attr);
                     }
                 }
-                arr[this.centerIdx] = this.pageInfo.centerPos;
-                console.log(arr);
+                arr[this.centerIdx].style.left = this.pageInfo.centerPos.left;
+                arr[this.centerIdx].style.top = this.pageInfo.centerPos.top;
                 return arr;
             },
 
@@ -118,18 +133,22 @@
                 return Math.floor(Math.random()*(max-min)+min);
             },
             setCenter:function (index) {
+                if(this.centerIdx == index){
+                    if(!this.posArr[index].isBack){
+                        console.log(this.transform);
+                        this.transform[index] = "rotateY(180deg)";
+//                        console.log(this.transform);
+//                        console.log(this.posArr[index])
+                    }else{
+                        this.transform[index] = "rotateY(0deg)";
+                    }
+                }
                 this.centerIdx = index;
             }
         },
         data:function () {
             return {
                 imgSrcArr:imgDatas,
-//                imgPosArr:[{
-//                    pos:{
-//                        left:0,
-//                        top:0
-//                    }
-//                }]
                 pageInfo:{
                     xLeftMin:0,
                     xLeftMax:0,
@@ -142,7 +161,8 @@
                         top:0
                     }
                 },
-                centerIdx:0
+                centerIdx:0,
+                transform:[]
             }
         }
     });

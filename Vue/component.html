@@ -7,22 +7,39 @@
 <body>
 <div id="app">
     <my-app></my-app>
+
 </div>
+<script type="text/x-template" id="sub-template">
+    <div>
+        <p>aa</p>
+        <h3>bb</h3>
+    </div>
+</script>
 <script type="text/x-template" id="my-template">
     <div>
-        <slod></slod>
-        <p>Hello World</p>
-        <h3>I am happy</h3>
+        <div v-for="val in arr">
+            <sub-app></sub-app>
+        </div>
     </div>
 </script>
 <script src="vue.js"></script>
 <script>
-    var vm = new Vue({
-        el:'#app',
-        components:{
-            'my-app':{
-                template:'#my-template'
+    Vue.component('sub-app',{
+        template:"#sub-template"
+    });
+    Vue.component('my-app',{
+        template:"#my-template",
+        props:['data'],
+        data:function () {
+            return {
+                arr:[1,2,3,5]
             }
+        }
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[1,2,3,5]
         }
     })
 </script>
