@@ -122,6 +122,7 @@ var Container = React.createClass({
         return Math.floor(Math.random()*(max-min)+min);
     },
     getBack:function (centerIdx) {
+        
         return function () {
             if(this.state.imgPosArr[centerIdx].isBack){
                 this.state.imgPosArr[centerIdx].isBack = false;
